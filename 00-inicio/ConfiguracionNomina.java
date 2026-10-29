@@ -1,13 +1,13 @@
 public class ConfiguracionNomina {
     private static ConfiguracionNomina instancia;
-    private double valorImpuesto;
+    private double deducciones;
 
-    // Constructor privado
+    // Constructor privado para evitar 'new ConfiguracionNomina()'
     private ConfiguracionNomina() {
-        this.valorImpuesto = 0.16;
+        this.deducciones = 0.1; // Valor por defecto
     }
 
-    // Método estático para obtener la única instancia
+    // Método estático global para acceder a la instancia única
     public static ConfiguracionNomina getInstancia() {
         if (instancia == null) {
             instancia = new ConfiguracionNomina();
@@ -15,12 +15,13 @@ public class ConfiguracionNomina {
         return instancia;
     }
 
-    public double getValorImpuesto() {
-        return valorImpuesto;
+    public double getDeducciones() {
+        return deducciones;
     }
 
-    public void setValorImpuesto(double valorImpuesto) {
-        this.valorImpuesto = valorImpuesto;
+    public void setDeducciones(double deducciones) {
+        this.deducciones = deducciones;
     }
 }
+
 
