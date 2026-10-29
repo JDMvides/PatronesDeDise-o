@@ -1,14 +1,26 @@
 public class ConfiguracionNomina {
-    private double porcentajeSalud = 0.04;
+    private static ConfiguracionNomina instancia;
+    private double valorImpuesto;
 
-    public ConfiguracionNomina() {
+    // Constructor privado
+    private ConfiguracionNomina() {
+        this.valorImpuesto = 0.16;
     }
 
-    public double getPorcentajeSalud() {
-        return porcentajeSalud;
+    // Método estático para obtener la única instancia
+    public static ConfiguracionNomina getInstancia() {
+        if (instancia == null) {
+            instancia = new ConfiguracionNomina();
+        }
+        return instancia;
     }
 
-    public void setPorcentajeSalud(double porcentajeSalud) {
-        this.porcentajeSalud = porcentajeSalud;
+    public double getValorImpuesto() {
+        return valorImpuesto;
+    }
+
+    public void setValorImpuesto(double valorImpuesto) {
+        this.valorImpuesto = valorImpuesto;
     }
 }
+
